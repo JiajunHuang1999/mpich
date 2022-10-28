@@ -33,6 +33,8 @@ int MPIR_Allreduce_intra_recexch(const void *sendbuf,
 
     rank = comm->rank;
     nranks = comm->local_size;
+    printf("Process %d is running the MPIR_Allreduce_intra_recexch\n", rank);
+    fflush(stdout);
     is_commutative = MPIR_Op_is_commutative(op);
 
     /* if there is only 1 rank, copy data from sendbuf

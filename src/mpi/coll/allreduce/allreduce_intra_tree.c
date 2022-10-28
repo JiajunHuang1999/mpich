@@ -39,7 +39,8 @@ int MPIR_Allreduce_intra_tree(const void *sendbuf,
 
     comm_size = MPIR_Comm_size(comm_ptr);
     rank = MPIR_Comm_rank(comm_ptr);
-
+    printf("Process %d is running the MPIR_Allreduce_intra_tree\n", rank);
+    fflush(stdout);
     MPIR_Datatype_get_size_macro(datatype, type_size);
     MPIR_Datatype_get_extent_macro(datatype, extent);
     MPIR_Type_get_true_extent_impl(datatype, &type_lb, &true_extent);

@@ -55,7 +55,8 @@ int MPIR_Allreduce_intra_reduce_scatter_allgather(const void *sendbuf,
 
     comm_size = comm_ptr->local_size;
     rank = comm_ptr->rank;
-
+    printf("Process %d is running the MPIR_Allreduce_intra_reduce_scatter_allgather\n", rank);
+    fflush(stdout);
     /* need to allocate temporary buffer to store incoming data */
     MPIR_Type_get_true_extent_impl(datatype, &true_lb, &true_extent);
     MPIR_Datatype_get_extent_macro(datatype, extent);

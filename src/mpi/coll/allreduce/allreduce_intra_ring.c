@@ -27,7 +27,8 @@ int MPIR_Allreduce_intra_ring(const void *sendbuf, void *recvbuf, MPI_Aint count
     is_inplace = (sendbuf == MPI_IN_PLACE);
     nranks = MPIR_Comm_size(comm);
     rank = MPIR_Comm_rank(comm);
-
+    printf("Process %d is running the MPIR_Allreduce_intra_ring\n", rank);
+    fflush(stdout);
     MPIR_Datatype_get_extent_macro(datatype, extent);
     MPIR_Type_get_true_extent_impl(datatype, &lb, &true_extent);
     extent = MPL_MAX(extent, true_extent);

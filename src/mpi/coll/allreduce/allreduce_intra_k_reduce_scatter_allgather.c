@@ -9,7 +9,6 @@
 #include "recexchalgo.h"
 #include "algo_common.h"
 
-
 int MPIR_Allreduce_intra_k_reduce_scatter_allgather(const void *sendbuf,
                                                     void *recvbuf,
                                                     MPI_Aint count,
@@ -38,6 +37,8 @@ int MPIR_Allreduce_intra_k_reduce_scatter_allgather(const void *sendbuf,
 
     rank = comm->rank;
     nranks = comm->local_size;
+    printf("Process %d is running the MPIR_Allreduce_intra_k_reduce_scatter_allgather\n", rank);
+    fflush(stdout);
     MPIR_Assert(MPIR_Op_is_commutative(op));
 
     /* need to allocate temporary buffer to store incoming data */

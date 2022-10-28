@@ -34,7 +34,8 @@ int MPIR_Allreduce_intra_recursive_doubling(const void *sendbuf,
 
     comm_size = comm_ptr->local_size;
     rank = comm_ptr->rank;
-
+    printf("Process %d is running the MPIR_Allreduce_intra_recursive_doubling\n", rank);
+    fflush(stdout);
     is_commutative = MPIR_Op_is_commutative(op);
 
     /* need to allocate temporary buffer to store incoming data */
